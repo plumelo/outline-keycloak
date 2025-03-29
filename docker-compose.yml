@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  outline-webhook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: outline-webhook
+    ports:
+      - "8000:8000"
+    environment:
+      WEBHOOK_SECRET: your_outline_webhook_secret
+      OUTLINE_ENDPOINT: https://your-outline-instance.com/api
+      OUTLINE_API_TOKEN: your_outline_api_token
+      KEYCLOAK_ENDPOINT: https://your-keycloak-instance.com
+      KEYCLOAK_REALM: your_realm
+      KEYCLOAK_CLIENT_ID: your_client_id
+      KEYCLOAK_CLIENT_SECRET: your_client_secret
